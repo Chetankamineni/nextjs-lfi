@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+  --color-bg: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-bg: black;
+  }
+}
