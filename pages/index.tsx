@@ -1,6 +1,9 @@
 import Head from 'next/head';
 import SmartRouter from './smartrouter'; 
 import TelkomAbout from './telkomabout';
+import CompareRouter from './compareRouter';
+import NewRouter from './newRouter';
+import PlanSection from './planSection';
 
 export default function Home() {
   return (
@@ -53,6 +56,12 @@ export default function Home() {
       <SmartRouter />
 
       <TelkomAbout />
+
+      <CompareRouter/>
+
+      <NewRouter/>
+
+      <PlanSection />
       
     </div>
   )
