@@ -7,11 +7,11 @@ const TelkomAbout = () => {
         
         
         <div className="w-full md:w-1/2 space-y-6">
-          <h2 className="text-3xl md:text-3xl font-extrabold text-[#003B71] leading-tight">
+          <h2 className="text-3xl md:text-3xl font-extrabold text-[#005288] leading-tight">
             What is Telkom's Smart Router?
           </h2>
           
-          <p className="text-[#0056A4] text-lg leading-relaxed font-medium">
+          <p className="text-[#005288] text-lg leading-relaxed font-medium">
             Introducing Telkom's new smart router, a cutting-edge device 
             designed to enhance your internet experience. This router offers 
             reliable connectivity, making it perfect for streaming, gaming, and 
@@ -24,9 +24,9 @@ const TelkomAbout = () => {
         <div className="w-full md:w-1/2">
           <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
             <img 
-              src="/friends-with-phones.jpg" 
+              src="/friends-phone.png" 
               alt="Friends enjoying high speed internet" 
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover transform scale-x-[-1]"
             />
           </div>
         </div>
