@@ -1,8 +1,10 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import SmartRouter from './smartrouter'; 
+import TelkomAbout from './telkomabout';
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Head>
         <title>Telkom | Smart Router</title>
         <meta name="description" content="Telkom smart router deals" />
@@ -47,6 +49,11 @@ export default function Home() {
           />
         </div>
       </main>
-    </>
+
+      <SmartRouter />
+
+      <TelkomAbout />
+      
+    </div>
   )
 }
