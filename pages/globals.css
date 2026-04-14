@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
-@theme {
+:root {
   --color-bg: white;
 }
 
 @media (prefers-color-scheme: dark) {
-  @theme {
+  :root {
     --color-bg: black;
   }
 }

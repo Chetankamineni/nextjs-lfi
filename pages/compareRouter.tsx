@@ -4,7 +4,7 @@ export default function CompareRouter() {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <section className="bg-[#f5f7fb] py-16 px-6 md:px-24">
+    <section className="bg-[#FFF] py-16 px-6 md:px-24">
       
       {/* Header */}
       <div className="flex justify-between items-center mb-8">

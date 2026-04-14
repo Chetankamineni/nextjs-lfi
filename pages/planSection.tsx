@@ -92,7 +92,7 @@ export default function PlanSection() {
   const plans = activeTab === "unlimited" ? unlimitedPlans : dataPlans;
 
   return (
-    <section className="bg-[#f5f7fb] py-16 px-6 md:px-24">
+    <section className="bg-[#FFF] py-16 px-6 md:px-24">
       
       {/* Title */}
       <h2 className="text-center text-2xl md:text-3xl font-bold text-[#003366] mb-6">
@@ -137,9 +137,9 @@ export default function PlanSection() {
             key={i}
             className="bg-white rounded-xl shadow p-4 flex flex-col items-center text-center"
           >
-            {/* SAME IMAGE FOR ALL */}
+            {}
             <img
-              src="/LTE.svg"   // 👈 use one common image
+              src="/LTE.svg"   //common image
               className="w-16 h-16 mb-3"
             />
 

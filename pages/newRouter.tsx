@@ -2,7 +2,7 @@ import React from "react";
 
 const UpgradeBanner = () => {
   return (
-    <section className="w-full bg-[#f2f2f2] py-12 px-6 md:px-20 border-t-4 border-b-4 border-white-500">
+    <section className="w-full bg-[#FFF] py-12 px-6 md:px-20">
       
       <div className="flex flex-col md:flex-row items-center justify-between gap-10">
         
