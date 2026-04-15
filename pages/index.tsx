@@ -1,8 +1,17 @@
-import Head from 'next/head'
+
+import Head from 'next/head';
+import SmartRouter from './smartrouter'; 
+import TelkomAbout from './telkomabout';
+import CompareRouter from './compareRouter';
+import NewRouter from './newRouter';
+import PlanSection from './planSection';
+import Features from './features';
+import ProductCare from './productcare';
+import SetupSection from './setupsection';
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Head>
         <title>Telkom | Smart Router</title>
         <meta name="description" content="Telkom smart router deals" />
@@ -12,7 +21,7 @@ export default function Home() {
         
         <div className="z-10 max-w-xl space-y-6">
           <h1 className="text-5xl md:text-7xl font-black tracking-tight whitespace-nowrap">
-            Telkom <span className="text-[#CCFF00]">smart router</span>
+            Telkom <span className="text-[#91E200]">smart router</span>
           </h1>
           
           <p className="text-lg md:text-xl font-medium leading-tight max-w-md">
@@ -30,10 +39,10 @@ export default function Home() {
           </div>
 
           <div className="flex flex-wrap gap-4 pt-4">
-            <button className="bg-[#CCFF00] text-[#001A33] px-10 py-3 rounded-md font-bold text-lg hover:bg-opacity-90 transition-all">
+            <button className="bg-[#91E200] text-[#003F6A] px-10 py-3 rounded-md font-bold text-lg hover:bg-opacity-90 transition-all">
               Buy now
             </button>
-            <button className="bg-white text-[#001A33] px-10 py-3 rounded-md font-bold text-lg hover:bg-gray-100 transition-all">
+            <button className="bg-white text-[#003F6A] px-10 py-3 rounded-md font-bold text-lg hover:bg-gray-100 transition-all">
               Call me back
             </button>
           </div>
@@ -47,6 +56,22 @@ export default function Home() {
           />
         </div>
       </main>
-    </>
+
+      <SmartRouter />
+    
+
+      <TelkomAbout />
+      <Features/>
+      <ProductCare/>
+      <SetupSection/>
+
+      <CompareRouter/>
+
+      <NewRouter/>
+
+      <PlanSection />
+      
+    </div>
+
   )
 }
