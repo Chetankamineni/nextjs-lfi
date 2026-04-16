@@ -48,7 +48,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative mt-12 md:mt-0 md:h-[600px] w-full flex justify-end items-start">
+        <div className="relative mt-12 md:mt-0 md:h-150 w-full flex justify-end items-start">
           <img 
             src="/woman.png" 
             alt="Smiling woman with glasses"

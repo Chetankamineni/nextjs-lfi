@@ -19,7 +19,7 @@ const Features: React.FC = () => {
               <img 
                 src="/phone-app.png" 
                 alt="Speed Test App" 
-                className="w-full max-w-[240px] h-auto object-contain" 
+                className="w-full max-w-60 h-auto object-contain" 
               />
             </div>
           </div>
@@ -51,11 +51,11 @@ const Features: React.FC = () => {
       ].map((text, index) => (
         <li key={index} className="flex items-center gap-3">
           {/* Check Icon Container */}
-          <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+          <div className="shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
             <img           
                src="/supporting icon.svg" 
                alt="Check Icon" 
-               className="w-5 h-5 flex-shrink-0 mt-0.5"
+               className="w-5 h-5 shrink-0 mt-0.5"
             /> 
           </div>
           <span>{text}</span>
