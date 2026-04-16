@@ -2,7 +2,7 @@ import React from 'react';
 
 const Features: React.FC = () => {
   return (
-    <section className="bg-[#f0f4f8] py-16 px-4 md:px-24 min-h-screen flex items-center">
+    <section className="bg-[#F3F4F5] py-16 px-4 md:px-24 min-h-screen flex items-center">
       <div className="max-w-6xl mx-auto w-full">
         <h2 className="text-4xl font-black text-[#003366] mb-12 text-center">Features</h2>
         
@@ -69,12 +69,9 @@ const Features: React.FC = () => {
       src="/design.png" 
       alt="Smart Router" 
       className="w-full max-w-[320px] h-auto object-contain" 
-    />
-  </div>
-</div>
-
-
-
+     />
+    </div>
+    </div>
         </div>
       </div>
     </section>

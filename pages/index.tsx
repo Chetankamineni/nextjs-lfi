@@ -61,9 +61,12 @@ export default function Home() {
     
 
       <TelkomAbout />
+      
       <Features/>
-      <ProductCare/>
+      
       <SetupSection/>
+
+      <ProductCare/>
 
       <CompareRouter/>
 

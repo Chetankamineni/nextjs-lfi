@@ -22,15 +22,16 @@ const ProductCare: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#eef6ff] py-16 px-6 md:px-24 font-sans">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-black text-[#003366] mb-10">Product care</h2>
+    <section className="flex flex-col items-center justify-center bg-[#E7F6FF] py-[64px] px-[20px] xl:px-[275px] font-sans w-full">
+      <div className="flex flex-col items-center gap-[60px] w-full max-w-[1920px]">
+        <h2 className="text-4xl font-black text-[#003366] self-start">Product care</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
           {careData.map((item, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-2xl p-10 shadow-sm flex flex-col items-start min-h-[320px]"
+              className="bg-[#FFF] rounded-[8px] p-10 flex flex-col items-start min-h-[320px]"
+              style={{ boxShadow: '2px 2px 4px 0px rgba(46, 63, 75, 0.15)' }}
             >
               <div className="mb-6">
                 {item.icon}
@@ -39,8 +40,9 @@ const ProductCare: React.FC = () => {
               <ul className="space-y-4">
                 {item.points.map((point, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                     <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                    <img src="supporting icon.svg" alt="check" className="w-5 h-5 flex-shrink-0 mt-0.5" /></div>
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                      <img src="supporting icon.svg" alt="check" className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                    </div>
                     <span className="text-[15px] font-bold text-[#003366] leading-tight">
                       {point}
                     </span>
@@ -50,8 +52,6 @@ const ProductCare: React.FC = () => {
             </div>
           ))}
         </div>
-
-        
       </div>
     </section>
   );
