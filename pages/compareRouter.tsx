@@ -4,7 +4,7 @@ export default function CompareRouter() {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <section className="bg-[#FFF] py-16 px-6 md:px-24">
+    <section className="bg-[#F3F4F5] py-16 px-6 md:px-24">
       
       {/* Header */}
       <div className="flex justify-between items-center mb-8">
@@ -18,10 +18,10 @@ export default function CompareRouter() {
         </div>
       </div>
 
-      {/* Cards */}
-      <div className="grid md:grid-cols-3 gap-6 mb-8">
-
-        <div className="bg-white rounded-xl shadow p-4 flex items-center gap-4">
+      {/* Cards (Scrollable on mobile) */}
+      <div className="flex md:grid md:grid-cols-3 gap-4 mb-8 overflow-x-auto md:overflow-visible scroll-smooth">
+        
+        <div className="bg-white rounded-xl shadow p-4 flex items-center gap-4 min-w-[250px]">
           <img src="/router-1.png" className="w-20 h-16 object-contain" />
           <div>
             <p className="text-blue-600 font-semibold text-sm">
@@ -32,7 +32,7 @@ export default function CompareRouter() {
           </div>
         </div>
 
-        <div className="bg-white rounded-xl shadow p-4 flex items-center gap-4">
+        <div className="bg-white rounded-xl shadow p-4 flex items-center gap-4 min-w-[250px]">
           <img src="/router-2.png" className="w-20 h-16 object-contain" />
           <div>
             <p className="text-blue-600 font-semibold text-sm">Huawei</p>
@@ -41,7 +41,7 @@ export default function CompareRouter() {
           </div>
         </div>
 
-        <div className="bg-white rounded-xl shadow p-4 flex items-center gap-4">
+        <div className="bg-white rounded-xl shadow p-4 flex items-center gap-4 min-w-[250px]">
           <img src="/router-3.png" className="w-20 h-16 object-contain" />
           <div>
             <p className="text-blue-600 font-semibold text-sm">D-link</p>
@@ -51,9 +51,9 @@ export default function CompareRouter() {
         </div>
       </div>
 
-      {/* Table */}
-      <div className="bg-white rounded-xl shadow overflow-hidden">
-        <table className="w-full text-sm text-left">
+      {/* Table (Scrollable on mobile) */}
+      <div className="bg-white rounded-xl shadow overflow-x-auto">
+        <table className="min-w-[700px] w-full text-sm text-left">
           
           <thead className="bg-gray-100 text-[#003366] font-semibold">
             <tr>

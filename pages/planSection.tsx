@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function PlanSection() {
   const [activeTab, setActiveTab] = useState("unlimited");
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const unlimitedPlans = [
     {
@@ -91,6 +94,30 @@ export default function PlanSection() {
 
   const plans = activeTab === "unlimited" ? unlimitedPlans : dataPlans;
 
+  // 👉 Scroll logic
+  const scrollToIndex = (index: number) => {
+    if (!scrollRef.current) return;
+
+    const cardWidth = scrollRef.current.children[0].clientWidth + 16;
+    scrollRef.current.scrollTo({
+      left: index * cardWidth,
+      behavior: "smooth",
+    });
+
+    setCurrentIndex(index);
+  };
+
+  const next = () => {
+    if (currentIndex < plans.length - 1) {
+      scrollToIndex(currentIndex + 1);
+    }
+  };
+
+  const prev = () => {
+    if (currentIndex > 0) {
+      scrollToIndex(currentIndex - 1);
+    }
+  };
   return (
     <section className="bg-[#FFF] py-16 px-6 md:px-24">
       
@@ -131,41 +158,35 @@ export default function PlanSection() {
       </div>
 
       {/* Cards */}
-      <div className="grid md:grid-cols-4 gap-6">
+      <div
+        ref={scrollRef}
+        className="flex md:grid md:grid-cols-4 gap-4 overflow-x-auto md:overflow-visible scroll-smooth"
+      >
         {plans.map((plan, i) => (
           <div
             key={i}
-            className="bg-white rounded-xl shadow p-4 flex flex-col items-center text-center"
-          >
-            {}
-            <img
-              src="/LTE.svg"   //common image
-              className="w-16 h-16 mb-3"
-            />
+            className="bg-white rounded-xl shadow p-4 flex flex-col items-center text-center min-w-[280px] md:min-w-0">
+            <img src="/LTE.svg" className="w-16 h-16 mb-3" />
 
             <h3 className="text-blue-600 font-semibold text-sm">
               {plan.title}
             </h3>
 
             <p className="text-xs text-gray-500 mb-2">{plan.speed}</p>
-
-            {/* Price */}
             <div className="bg-[#e6f0fa] w-full rounded-md py-3 mb-3">
               <p className="text-sm">From</p>
               <p className="text-xl font-bold text-[#003366]">
-                {plan.price}*
+                {plan.price}* 
               </p>
               <p className="text-xs text-gray-500">On contract</p>
             </div>
 
-            {/* Details */}
             <div className="text-left text-xs space-y-1 mb-4">
               {plan.points.map((p, idx) => (
                 <p key={idx}>• {p}</p>
               ))}
             </div>
 
-            {/* Buttons */}
             <div className="flex gap-2 w-full">
               <button className="flex-1 border border-blue-500 text-blue-500 py-2 rounded-md text-sm">
                 Call me back
@@ -176,6 +197,29 @@ export default function PlanSection() {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Arrows + Dots (ONLY mobile) */}
+      <div className="flex md:hidden items-center justify-center gap-4 mt-6">
+        
+        <button onClick={prev} className="bg-gray-200 p-2 rounded-full">
+          ←
+        </button>
+
+        <div className="flex gap-2">
+          {plans.map((_, i) => (
+            <div
+              key={i}
+              className={`h-2 w-6 rounded-full ${
+                i === currentIndex ? "bg-blue-500" : "bg-gray-300"
+              }`}
+            />
+          ))}
+        </div>
+
+        <button onClick={next} className="bg-gray-200 p-2 rounded-full">
+          →
+        </button>
       </div>
     </section>
   );
